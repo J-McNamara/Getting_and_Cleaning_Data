@@ -1,0 +1,19 @@
+Background
+==========
+This project was completed in accordance with the Coursera Data Science course requirements.
+
+The dataset is from the UCI machine learning repository. The dataset can be found here:
+http://archive.ics.uci.edu/ml/machine-learning-databases/00240/
+
+Descriptions of the dataset can be found here:
+http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones#
+
+The data came from the following study:
+Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. A Public Domain Dataset for Human Activity Recognition Using Smartphones. 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013.
+
+Analysis
+========
+A tidy dataset was constructed from the original data repo using the script 'run_analysis.R'. This script creates a dataframe including the mean and standard deviation of each accelerometric measurement, called 'tidy_data.csv'. It also renames several of the variables to make them more readable. Means for each activity category were then calculated and presented in a second dataframe, 'tidy_summary_data.csv'. 
+
+
+Josh McNamara
