@@ -1,19 +1,171 @@
+**********************************************************
+Code Book for Josh McNamara's analysis of the UCI HAR data
+**********************************************************
+
+
+==========
 Background
 ==========
-This project was completed in accordance with the Coursera Data Science course requirements.
+	This project was completed in accordance with the Coursera Data Science course requirements.
 
-The dataset is from the UCI machine learning repository. The dataset can be found here:
-http://archive.ics.uci.edu/ml/machine-learning-databases/00240/
+	The dataset is from the UCI machine learning repository. The dataset can be found here:
+	http://archive.ics.uci.edu/ml/machine-learning-databases/00240/
 
-Descriptions of the dataset can be found here:
-http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones#
+	Descriptions of the dataset can be found here:
+	http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones#
 
-The data came from the following study:
-Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. A Public Domain Dataset for Human Activity Recognition Using Smartphones. 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013.
+	The data came from the following study:
+	Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. A Public Domain Dataset for Human Activity Recognition Using Smartphones. 21th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning, ESANN 2013. Bruges, Belgium 24-26 April 2013.
 
 Analysis
 ========
-A tidy dataset was constructed from the original data repo using the script 'run_analysis.R'. This script creates a dataframe including the mean and standard deviation of each accelerometric measurement, called 'tidy_data.csv'. It also renames several of the variables to make them more readable. Means for each activity category were then calculated and presented in a second dataframe, 'tidy_summary_data.csv'. 
+	A tidy dataset was constructed from the original data repo using the script 'run_analysis.R'. This script creates a dataframe including the mean and standard deviation of each accelerometric measurement, called 'tidy_data.csv'. It also renames several of the variables to make them more readable. Means for each activity category were then calculated and presented in a second dataframe, 'tidy_summary_data.csv'. 
 
 
-Josh McNamara
+	Josh McNamara
+
+
+
+
+
+=====
+Data:
+=====
+	tidy_data.csv is a csv file of the whole dataframe
+	tidy_data.csv is a csv file of the dataframe summarised by activity variable
+
+	The first row contains the column names, and each subsequent row containes a unique observation.
+
+=============
+Column names:
+=============
+	Each row is a single mean or standard deviation datum pertaining to the column header:
+		time_BodyAcc_mean_Y
+		time_BodyAcc_mean_Z
+		time_GravityAcc_mean_X
+		time_GravityAcc_mean_Y
+		time_GravityAcc_mean_Z
+		time_BodyAccJerk_mean_X
+		time_BodyAccJerk_mean_Y
+		time_BodyAccJerk_mean_Z
+		time_BodyGyro_mean_X
+		time_BodyGyro_mean_Y
+		time_BodyGyro_mean_Z
+		time_BodyGyroJerk_mean_X
+		time_BodyGyroJerk_mean_Y
+		time_BodyGyroJerk_mean_Z
+		time_BodyAccMag_mean
+		time_GravityAccMag_mean
+		time_BodyAccJerkMag_mean
+		time_BodyGyroMag_mean
+		time_BodyGyroJerkMag_mean
+		frequency_BodyAcc_mean_X
+		frequency_BodyAcc_mean_Y
+		frequency_BodyAcc_mean_Z
+		frequency_BodyAcc_meanFreq_X
+		frequency_BodyAcc_meanFreq_Y
+		frequency_BodyAcc_meanFreq_Z
+		frequency_BodyAccJerk_mean_X
+		frequency_BodyAccJerk_mean_Y
+		frequency_BodyAccJerk_mean_Z
+		frequency_BodyAccJerk_meanFreq_X
+		frequency_BodyAccJerk_meanFreq_Y
+		frequency_BodyAccJerk_meanFreq_Z
+		frequency_BodyGyro_mean_X
+		frequency_BodyGyro_mean_Y
+		frequency_BodyGyro_mean_Z
+		frequency_BodyGyro_meanFreq_X
+		frequency_BodyGyro_meanFreq_Y
+		frequency_BodyGyro_meanFreq_Z
+		frequency_BodyAccMag_mean
+		frequency_BodyAccMag_meanFreq
+		frequency_BodyAccJerkMag_mean
+		frequency_BodyAccJerkMag_meanFreq
+		frequency_BodyGyroMag_mean
+		frequency_BodyGyroMag_meanFreq
+		frequency_BodyGyroJerkMag_mean
+		frequency_BodyGyroJerkMag_meanFreq
+		time_BodyAcc_std_X
+		time_BodyAcc_std_Y
+		time_BodyAcc_std_Z
+		time_GravityAcc_std_X
+		time_GravityAcc_std_Y
+		time_GravityAcc_std_Z
+		time_BodyAccJerk_std_X
+		time_BodyAccJerk_std_Y
+		time_BodyAccJerk_std_Z
+		time_BodyGyro_std_X
+		time_BodyGyro_std_Y
+		time_BodyGyro_std_Z
+		time_BodyGyroJerk_std_X
+		time_BodyGyroJerk_std_Y
+		time_BodyGyroJerk_std_Z
+		time_BodyAccMag_std
+		time_GravityAccMag_std
+		time_BodyAccJerkMag_std
+		time_BodyGyroMag_std
+		time_BodyGyroJerkMag_std
+		frequency_BodyAcc_std_X
+		frequency_BodyAcc_std_Y
+		frequency_BodyAcc_std_Z
+		frequency_BodyAccJerk_std_X
+		frequency_BodyAccJerk_std_Y
+		frequency_BodyAccJerk_std_Z
+		frequency_BodyGyro_std_X
+		frequency_BodyGyro_std_Y
+		frequency_BodyGyro_std_Z
+		frequency_BodyAccMag_std
+		frequency_BodyAccJerkMag_std
+		frequency_BodyGyroMag_std
+		frequency_BodyGyroJerkMag_std
+
+	The column 'dataset' indicates whether an observation was a part of the training or test dataset.
+		test
+		training
+	The 'activity' column indicates the activiy call associated with each measurement:
+		WALKING
+		WALKING_UPSTAIRS
+		WALKING_DOWNSTAIRS
+		SITTING
+		STANDING
+		LAYING
+
+==========
+Variables:
+==========
+	df
+		This is the main dataframe with the mean and standard deviation values selected for each measure.
+
+	YeOldeSummaryTable
+		This is the summary dataframe with each accelerometric measurement reported as the mean for each activity label.
+
+	labels
+		This is a character vector containing the different classes of activity labels:
+			WALKING
+			WALKING_UPSTAIRS
+			WALKING_DOWNSTAIRS
+			SITTING
+			STANDING
+			LAYING
+	keeps
+		This is a list of column names that signify mean or standard deviation measures, which were kept for the subsequent analysis.
+
+	Other variables
+		Other variables were used for indexing objects for facile subsetting, and are not consequential to the analysis.
+
+================
+Transformations:
+================
+
+	Source data:
+		https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+	Transformations applied to the source data:
+		* The source dataset was unzipped
+		* Training and test datasets were merged
+		* Mean and standard deviation measurements were extracted from the raw data
+		* Column headers were given more intuitive and readable names
+		* Special characters were removed from the column headers
+		* Activity labels were applied to each observation in a humam readable format
+		* Data were summarized in a separate dataframe as the mean of each measurement with respect to each activity label category
+		* Dataframes were written out as csv files for downstream analysis
